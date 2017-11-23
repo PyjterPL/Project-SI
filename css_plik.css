@@ -1,0 +1,39 @@
+div#header 
+{
+	font: bold 65pt Arial; color:white; text-align: center;
+	background: #232323;
+}
+
+div#navi
+{
+	background: #DEDEDE;
+	float:left;
+	width: 10%;
+	height: 800px;
+}
+
+div#content
+{
+	background: #555454;
+	width: 80%;
+	float:left;
+	height: 800px;	
+	
+}
+
+div#baner
+{
+	float:left;
+	text-align: center;
+	height: 800px;	
+	width: 10%;
+	background: #888888;
+}
+
+div#footer
+{
+	clear: both;
+	width: 100%;
+	background: #232323; color:white; text-align: center;
+	margin: 20px 0px 0px 0px;
+}
