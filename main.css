@@ -1,0 +1,165 @@
+html {
+    background: #000000;
+    background-image: linear-gradient(180deg, rgb(60, 60, 60 ) 0%, rgb(0, 0, 0) 100%);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: #f7f7f7;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    color: #545454;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0em 0em 4em;
+}
+
+h1
+{
+    padding-left: 20px;
+}
+
+img {
+    animation: colorize 2s cubic-bezier(0, 0, .78, .36) 1;
+    background: transparent;
+    border: 10px solid rgba(0, 0, 0, 0.10);
+    border-radius: 2px;
+    display: block;
+    margin: 1.3em auto;
+    max-width: 95%;
+}
+
+.nav
+{ 
+	width: 100%;
+	padding: 10px 0;
+	background-color: #234a60;
+	text-align: center;
+	border-top: 1px solid #234a60;
+	border-bottom: 1px solid #234a60;
+    
+}
+
+
+ol
+{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	font-size: 18px;
+	height: 35px;
+	line-height: 200%;
+	display: inline-block;
+}
+
+ol a
+{
+	color: #ffffff;
+	text-decoration: none;
+	display: block;
+}
+
+ol > li
+{
+	float: left;
+	width: 140px;
+	height: 40px;
+	border-right: 2px dashed #000000;
+}
+
+ol > li:first-child
+{
+	border-left: 2px dashed #000000;
+}
+
+ol > li:hover
+{
+	background-color: #88bbd8;
+}
+
+ol > li:hover > a
+{
+	color: #fff;
+}
+
+ol > li > ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	height: 40px;
+	display: none;
+}
+
+ol > li:hover > ul
+{
+	display: block;
+}
+
+ol > li > ul > li
+{
+	background-color:#234a60;
+	position: relative;
+	z-index: 100;
+	border-top: 2px dashed #000000;
+}
+
+ol > li > ul > li:hover
+{
+	background-color: #88bbd8;
+}
+
+ol > li > ul > li:hover > a
+{
+	color: #fff;
+}
+
+
+@keyframes colorize {
+    0% {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+    100% {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+}
+
+.scrollup
+{
+	width: 64px;
+	height: 64px;
+	text-decoration: none;
+	background: url("screenshots/up.png") no-repeat 0px 0px;
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+  
+}
+
+a:link
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+a:visited
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #485b3b;
+	text-decoration: underline;
+}
+
+a:active
+{
+	color: #fff;
+	text-decoration: none;
+}
