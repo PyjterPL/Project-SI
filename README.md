@@ -1,5 +1,5 @@
 #Co zostało zrobione:
-#* Połączenie z Bazą Danych
+* Połączenie z Bazą Danych
 #* System Logowania
 #* Zaczątki Panelu użytkownika 
 #    a) Avatar
