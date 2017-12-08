@@ -26,7 +26,7 @@
 
 
 <div id="navi">
-
+<li><a href="index.php">Powrót</a></li>
 <form action = "login.php" method="post">
 
 		Login: <br/> <input type="text" name="login"/> <br/>
