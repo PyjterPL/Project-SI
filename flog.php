@@ -34,6 +34,10 @@
 		<input type = "submit" value = "Zaloguj Się"/>
 		
 </form>
+</br>
+<form action ="rejestracja.php" method="post">
+<input type = "submit" value="Zarejestruj się"/>
+</form> 
 <?php
 	if(isset($_SESSION['errlog'])) echo $_SESSION['errlog'];
 	
