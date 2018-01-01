@@ -6,9 +6,9 @@
 Tradycyjnie, narazie tutaj, bo nie chciałbym uszkodzić bazy no i " u mnie działa". Wrzucę na główną jak tylko dostanę zielone światło. 
 Co tym razem zostało zrobione:
 
--Dodano rejestracje, która nawet działa 
--Wszelakie sprawdzania poprawnosci maila,loginu,hasła 
--Sprawdzanie,czy login i mail się powtarzają w bazie 
+- Dodano rejestracje, która nawet działa 
+- Wszelakie sprawdzania poprawnosci maila,loginu,hasła 
+- Sprawdzanie,czy login i mail się powtarzają w bazie 
 - Hasło jest haszowane 
 - Jest zaimplementowana reCAPTCHA od Google ( swoją drogą to naprawdę proste)
 - Zapytania SQL wykorzystują Try-Catch 
