@@ -4,6 +4,7 @@
 
 PROSZĘ USTAWIĆ MAKS DŁ.HASŁA W BAZIE DANYCH NA 70 ! Inaczej utnie hasz i nie będzie możliwe zalogowanie się
 
+Zalogowanie się od tej pory na Piotr_Zuber h:admin będzie niemożliwe ze względu na niezahaszowania hasła
 
 Tradycyjnie, narazie tutaj, bo nie chciałbym uszkodzić bazy no i " u mnie działa". Wrzucę na główną jak tylko dostanę zielone światło. 
 Co tym razem zostało zrobione:
