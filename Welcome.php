@@ -22,7 +22,7 @@
 
 	Rejestracja powiodła się. Teraz możesz zalogować się na swoje konto! <br/><br/>
 	
-	<a href="index.php"> <Zaloguj się na swoje konto !</a>
+	<a href="index.php"> Zaloguj się na swoje konto !</a>
 	<br/><br/>
 
 
