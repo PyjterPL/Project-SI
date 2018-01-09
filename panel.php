@@ -21,6 +21,11 @@
 	echo"<p>Witaj ".$_SESSION['User'].'[<a href="logout.php">Wyloguj się</a>]</p>';
 	echo '<img height="50" width="50" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['Avatar'] ).'"/>';
 	echo"<p><b>E-mail</b>: ".$_SESSION['Email']; 
+	if ($_SESSION['PermissionID']==1)//Jeśli to admin
+	{
+		echo '<br><a href="cms/admin-panel.php" id="logo">Panel Administratora</a></br>';
+	}
+
 ?>
 
 </body>
