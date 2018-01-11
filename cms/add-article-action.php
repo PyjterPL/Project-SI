@@ -1,7 +1,7 @@
 <?php
 require_once('../connection.php');
 require_once('../article_class.php');
-
+//test git
 session_start();
 $article = new Article;
 if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['PermissionID']<3)
