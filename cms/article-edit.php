@@ -1,14 +1,17 @@
 <?php
 require_once('../connection.php');
 require_once('../article_class.php');
+require_once('../articles_categories_class.php');
 
 session_start();
 $article = new Article;
+$category= new Category;
+
 if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  ($_SESSION['PermissionID']<3))
 {   
     $id=$_GET['id'];
     $data = $article->fetch_data($id);
-    
+    $categories = $category->fetch_all();
     ?>
     <html>
     <head>
@@ -32,6 +35,13 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
                 <textarea rows="5" cols="20" placeholder="Wstęp" name="introduction"><?php echo $data['Introduction']; ?></textarea></br></br>
                 <textarea rows="15" cols="20" placeholder="Treść" name="content"><?php echo $data['Content']; ?></textarea></br></br>
                 <input type="text" name="tags" placeholder="Tagi" value="<?php echo $data['Tags']; ?>"/></br></br>
+                Kategoria <input list="categories" name = "category">
+                    <datalist id="categories">                                          
+                        <?php foreach($categories as $category) { ?> 
+                            <option value="<?php echo $category['CategoryID'].'.'.$category['Name']; ?>">  
+                            <?php } ?>                     
+                    </datalist> 
+
                 <input type="submit" value="Edytuj" />
                 </form>
             </div>

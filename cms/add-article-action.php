@@ -13,9 +13,10 @@ if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['Perm
     $content = $_POST['content'];
     $tags = $_POST['tags'];
     $insertdate=date('Y-m-d G:i:s');
-   // $insertdate->setTimestamp(time());
     $userID= $_SESSION['UserID'];
-    $categoryID=1;
+    $categoryID=$_POST['category'];
+
+    echo $categoryID;
 
         if(empty($title) or empty($introduction) or empty($content) or empty($tags))
         {

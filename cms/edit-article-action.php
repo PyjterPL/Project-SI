@@ -13,7 +13,7 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
     $content = $_POST['content'];
     $tags = $_POST['tags'];
     $userID= $_SESSION['UserID'];
-    $categoryID=1;
+    $categoryID=(int)$_POST['category'];
     $id = $_GET['id'];
 
         if(empty($title) or empty($introduction) or empty($content) or empty($tags))

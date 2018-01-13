@@ -1,11 +1,15 @@
 <?php
 require_once('../connection.php');
 require_once('../article_class.php');
+require_once('../articles_categories_class.php');
 
 session_start();
 $article = new Article;
+$category= new Category;
+
 if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['PermissionID']<3)
 {
+    $categories = $category->fetch_all();
     ?>
     <html>
     <head>
@@ -25,10 +29,16 @@ if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['Perm
                 ?>
 
                 <form action="add-article-action.php" method="post" autocomplete="off">
-                <input type="text" name="title" placeholder="Tytuł"/></br></br>
-                <textarea rows="5" cols="20" placeholder="Wstęp" name="introduction"></textarea></br></br>
-                <textarea rows="15" cols="20" placeholder="Treść" name="content"></textarea></br></br>
-                <input type="text" name="tags" placeholder="Tagi"/></br></br>
+                Tytuł<input type="text" name="title" placeholder="Tytuł"/></br></br>
+                Wstęp<textarea rows="5" cols="20" placeholder="Wstęp" name="introduction"></textarea></br></br>
+               Treść <textarea rows="15" cols="20" placeholder="Treść" name="content"></textarea></br></br>
+                Tagi<input type="text" name="tags" placeholder="Tagi"/></br></br>
+               Kategoria <input list="categories" name = "category">
+                    <datalist id="categories">                                          
+                        <?php foreach($categories as $category) { ?> 
+                            <option value="<?php echo $category['CategoryID'].'.'.$category['Name']; ?>">  
+                            <?php } ?>                     
+                    </datalist> 
                 <input type="submit" value="Dodaj do bazy" />
                 </form>
             </div>

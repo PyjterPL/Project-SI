@@ -15,6 +15,8 @@ session_start();
     <div class="container">
 <a href="../index.php" id="logo">Strona glowna</a>
 </br>
+<a href="admin-panel.php" id="logo">CMS</a>
+</br>
 <a href="article-add.php" id="logo">Dodaj nowy artykuł</a>
     <ol>
         <?php foreach($articles as $article) { ?>

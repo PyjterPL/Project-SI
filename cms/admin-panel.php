@@ -15,7 +15,7 @@ session_start();
     <a href="articles-options.php">Artykuły</a>;
     </ol>
     <ol>
-    <a href="articles-options.php">Użytkownicy</a>;
+    <a href="user-options.php">Użytkownicy</a>;
     </ol>
     </div>
 </body>
