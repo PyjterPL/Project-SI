@@ -151,7 +151,8 @@
 <head> 
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<title> TROCHĘ NIERÓWNY PANEL GŁÓWNY</title> 
+	<title> TROCHĘ NIERÓWNY PANEL GŁÓWNY</title>
+    <link rel="Stylesheet" type="text/css" href="CSS/Login.css" />
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 	
 	<!--Kod czerwonego napisu w przypadku zbyt krótkiego loginu.  !!Place Holder poniższy styl zastąpić CSS'em!! -->
@@ -165,10 +166,14 @@
 		</style>
 </head>
 
+    
+    
 <body>
      <!-- Forma Rejestracji -->
+    <div id="containerforregister">
+        
 	<form method ="post">
-		Login: <br/> <input type="text" name ="login"/><br/>
+		<input type="text" name ="login" placeholder="Login" /><br/>
 		
 		
 		<?php // Sprawdzenie poprawoności loginu 
@@ -178,7 +183,7 @@
 				unset($_SESSION['err_login']);
 			}
 		?>
-		E-mail: <br/> <input type="text" name ="email"/><br/>
+		<input type="text" name ="email" placeholder="Email"/>
 			<?php // Sprawdzenie poprawności e-mail
 			if(isset($_SESSION['err_mail']))
 			{
@@ -186,7 +191,8 @@
 				unset($_SESSION['err_mail']);
 			}
 		?>
-		Hasło: <br/> <input type="password" name ="haslo"/><br/>
+		
+        <input type="password" name ="haslo" placeholder="Hasło"/>
 		<?php // Sprawdzenie poprawności haseł 
 			if(isset($_SESSION['err_haslo']))
 			{
@@ -195,11 +201,13 @@
 			}
 		?>
 		
-		Powtórz Hasło: <br/> <input type="password" name ="haslo2"/><br/>
+		<input type="password" name ="haslo2" placeholder="Powtórz Hasło"/>
 		
 		<label>
-		<input type="checkbox" name = "regulamin" /> Akceptuje regulamin chociaż go nie przeczytałem/am 
+       
+		<input type="checkbox" name = "regulamin" /> Akceptuje regulamin
 		</label>
+        
 		<?php // Sprawdzenie akceptacji regulaminu (checkbox)
 			if(isset($_SESSION['err_regulamin']))
 			{
@@ -207,6 +215,7 @@
 				unset($_SESSION['err_regulamin']);
 			}
 		?>
+        
 		
 		<div class="g-recaptcha" data-sitekey="6LfT8j4UAAAAAMdYetjCV2EEf_F3zkUe_o-Wa-HH"></div>
 		
@@ -218,10 +227,14 @@
 			}
 		?>
 		
-		<br/>
-		
 		<input type="submit" value = "Zarejetruj się"/>
+        <input type="button" value="Powrót" onclick="window.location.href='index.php'" />
 		</form>
+        
+      
+        
+       
+        </div>
 
 </body>
 </html>

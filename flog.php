@@ -8,7 +8,6 @@
 	}
 ?>
 
-
 <!DOCTYPE HTML>
 <HTML lang="pl">
 
@@ -16,47 +15,44 @@
 	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
 	<meta name="Description" content="Opis strony" />
 	<meta name="Keywords" content="Wyrazy kluczowe" />
-	<link rel="Stylesheet" type="text/css" href="css_plik.css" />
+	<link rel="Stylesheet" type="text/css" href="CSS/Login.css" />
 	
 	<title> TYTUL </title> 
 </HEAD>
+    
+    
 <BODY>
+    
+    
+<div id="page">  
+    <div id="container">  
+        
+    <form action = "login.php" method="post">
 
+         <input type="text" name="login" placeholder="Login"/> 
+         <input type ="password" name = "pass" placeholder="Hasło"/>
+         <input type = "submit" value = "Zaloguj Się"/>
 
+    </form>
 
+    <form action ="rejestracja.php" method="post">
 
-<div id="navi">
-<li><a href="index.php">Powrót</a></li>
-<form action = "login.php" method="post">
+    <input type = "submit" value="Zarejestruj się"/> <br />
+    </form> 
 
-		Login: <br/> <input type="text" name="login"/> <br/>
-		Hasło: <br/> <input type ="password" name = "pass"/> <br/> <br/>
-		<input type = "submit" value = "Zaloguj Się"/>
-		
-</form>
-</br>
-<form action ="rejestracja.php" method="post">
-<input type = "submit" value="Zarejestruj się"/>
-</form> 
-<?php
-	if(isset($_SESSION['errlog'])) echo $_SESSION['errlog'];
-	
-?>
+    <form>
+        <input type="button" value="Powrót" onclick="window.location.href='index.php'" />
+    </form> 
+    <!-- <button> <a href="index.php"></a>  Powrót</button>
+   <!--<br> <a href="index.php" class="button">Powrót</a>-->
 
+    <?php
+        if(isset($_SESSION['errlog'])) echo $_SESSION['errlog'];
+
+    ?>
+    </div>
 </div>
-
-
-
-<div  id="footer">
-Footer &copy Wszelkie prawa zastrze�one
-</div>
-
-
-	
-
-	
-
-
+    
 </BODY>
 </HTML>
 

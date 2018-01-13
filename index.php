@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Projekt SI</title>
         <meta name="description" content="test">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="CSS/main.css">
         
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		
