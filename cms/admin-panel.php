@@ -17,6 +17,9 @@ session_start();
     <ol>
     <a href="user-options.php">Użytkownicy</a>;
     </ol>
+    <ol>
+    <a href="categories-options.php">Kategorie</a>;
+    </ol>
     </div>
 </body>
 </html>
