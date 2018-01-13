@@ -28,17 +28,19 @@ if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['Perm
                 }
                 ?>
 
-                <form action="add-article-action.php" method="post" autocomplete="off">
+                <form action="add-article-action.php" method="post" autocomplete="off" enctype="multipart/form-data">
                 Tytuł<input type="text" name="title" placeholder="Tytuł"/></br></br>
                 Wstęp<textarea rows="5" cols="20" placeholder="Wstęp" name="introduction"></textarea></br></br>
                Treść <textarea rows="15" cols="20" placeholder="Treść" name="content"></textarea></br></br>
                 Tagi<input type="text" name="tags" placeholder="Tagi"/></br></br>
+               Obrazek <input type="file" name="obrazek" accept="image/jpeg,image/gif,image/jpg" /></br></br>
+
                Kategoria <input list="categories" name = "category">
                     <datalist id="categories">                                          
                         <?php foreach($categories as $category) { ?> 
                             <option value="<?php echo $category['CategoryID'].'.'.$category['Name']; ?>">  
                             <?php } ?>                     
-                    </datalist> 
+                    </datalist> </br></br>
                 <input type="submit" value="Dodaj do bazy" />
                 </form>
             </div>

@@ -27,14 +27,23 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
                 if(isset($_GET['error']))
                 {
                     echo $_GET['error'];
+                    //echo '<img height="50" width="50" src="data:image/jpeg;base64,'.base64_encode( $_SESSION['Avatar'] ).'"/>';
                 }
                 ?>
 
-                <form action="edit-article-action.php?id=<?php echo $id; ?>" method="post">
+                <form action="edit-article-action.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
                 <input type="text" name="title" placeholder="Tytuł" value="<?php echo $data['Title']; ?>"/></br></br>
                 <textarea rows="5" cols="20" placeholder="Wstęp" name="introduction"><?php echo $data['Introduction']; ?></textarea></br></br>
                 <textarea rows="15" cols="20" placeholder="Treść" name="content"><?php echo $data['Content']; ?></textarea></br></br>
                 <input type="text" name="tags" placeholder="Tagi" value="<?php echo $data['Tags']; ?>"/></br></br>
+                Obrazek <input type="file" name="obrazek" accept="image/jpeg,image/gif,image/jpg" /></br></br>
+              
+                <?php 
+                if(!empty($data['Image']))
+                {
+                 echo '<img height="50" width="50" src="data:image/jpeg;base64,'.base64_encode( $data['Image'] ).'"/>';
+                }
+                ?></br></br>
                 Kategoria <input list="categories" name = "category">
                     <datalist id="categories">                                          
                         <?php foreach($categories as $category) { ?> 
