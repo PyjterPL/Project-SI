@@ -19,7 +19,7 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
         if(empty($title) or empty($introduction) or empty($content) or empty($tags))
         {
             $error="Uzupełnij wymagane pola";
-            header("Location: article-edit.php?error=$error");
+            header("Location: article-edit.php?error=$error&id=$id");
             exit();
         }
     $query=$pdo->prepare('UPDATE articles SET CategoryID=?, UserID=?,Title=?,Introduction=?,Tags=?,Content=? WHERE ArticleID=?');

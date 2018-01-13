@@ -7,23 +7,22 @@ require_once('../permissions_class.php');
 session_start();
 $user = new User;
 $permission = new Permission;
-if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  ($_SESSION['PermissionID']<3))
+if( isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  ($_SESSION['PermissionID']<3))
 {   
-    $id=$_GET['id'];
-    $data = $user->fetch_data($id);
+    //$data = $user->fetch_data($id);
     $permissions = $permission->fetch_all();
     
     ?>
     <html>
     <head>
-        <title>Edycja danych użytkownika</title>
+        <title>Dodawanie użytkownika</title>
         <link rel="stylesheet" href="admin-panel-style.css" /> 
     </head>
          <body>
             <div class="container">
             <a href="articles-options.php">Powrót</a>
             </br>
-            <h4>Edycja danych</h4>
+            <h4>Dodawanie użytkownika</h4>
                 <?php
                 if(isset($_GET['error']))
                 {
@@ -31,11 +30,11 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
                 }
                 ?>
 
-                <form action="edit-user-action.php?id=<?php echo $id; ?>" method="post">
-                Login<input type="text" name="name" placeholder="Login" value="<?php echo $data['Name']; ?>"/></br></br>
+                <form action="add-user-action.php" method="post">
+                Login<input type="text" name="name" placeholder="Login" value=""/></br></br>
                 Hasło<textarea rows="5" cols="20" placeholder="Hasło" name="password"></textarea></br></br>
-               Email<textarea rows="15" cols="20" placeholder="mail" name="mail"><?php echo $data['Email']; ?></textarea></br></br>
-               Opis <input type="text" name="description" placeholder="Opis" value="<?php echo $data['Description']; ?>"/></br></br>
+               Email<textarea rows="15" cols="20" placeholder="mail" name="mail"></textarea></br></br>
+               Opis <input type="text" name="description" placeholder="Opis" value=""/></br></br>
 
                Uprawnienia <input list="permissions" name = "permission">
                     <datalist id="permissions">                                          
@@ -44,8 +43,7 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
                             <?php } ?>                     
                     </datalist> 
                     
-                    
-                <input type="submit" value="Edytuj" />
+                <input type="submit" value="Dodaj" />
                 </form>
             </div>
         </body>
