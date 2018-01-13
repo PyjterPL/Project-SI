@@ -30,11 +30,12 @@ if( isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  ($_SESSION['Pe
                 }
                 ?>
 
-                <form action="add-user-action.php" method="post">
+                <form action="add-user-action.php" method="post" enctype="multipart/form-data">
                 Login<input type="text" name="name" placeholder="Login" value=""/></br></br>
                 Hasło<textarea rows="5" cols="20" placeholder="Hasło" name="password"></textarea></br></br>
                Email<textarea rows="15" cols="20" placeholder="mail" name="mail"></textarea></br></br>
                Opis <input type="text" name="description" placeholder="Opis" value=""/></br></br>
+               Obrazek  <input type="file" name="obrazek" accept="image/jpeg,image/gif,image/jpg" /></br></br>
 
                Uprawnienia <input list="permissions" name = "permission">
                     <datalist id="permissions">                                          

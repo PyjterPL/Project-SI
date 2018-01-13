@@ -31,12 +31,18 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
                 }
                 ?>
 
-                <form action="edit-user-action.php?id=<?php echo $id; ?>" method="post">
+                <form action="edit-user-action.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
                 Login<input type="text" name="name" placeholder="Login" value="<?php echo $data['Name']; ?>"/></br></br>
                 Hasło<textarea rows="5" cols="20" placeholder="Hasło" name="password"></textarea></br></br>
                Email<textarea rows="15" cols="20" placeholder="mail" name="mail"><?php echo $data['Email']; ?></textarea></br></br>
                Opis <input type="text" name="description" placeholder="Opis" value="<?php echo $data['Description']; ?>"/></br></br>
-
+               Obrazek  <input type="file" name="obrazek" accept="image/jpeg,image/gif,image/jpg" /></br></br>
+               <?php 
+                if(!empty($data['Avatar']))
+                {
+                 echo '<img height="50" width="50" src="data:image/jpeg;base64,'.base64_encode( $data['Avatar'] ).'"/>';
+                }
+                ?></br></br>
                Uprawnienia <input list="permissions" name = "permission">
                     <datalist id="permissions">                                          
                         <?php foreach($permissions as $permission) { ?> 
