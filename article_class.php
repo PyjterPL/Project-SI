@@ -27,6 +27,18 @@ class Article
         $query->execute();
     }
 
+    public function fetch_last()
+    {
+        // Domyślnie przjmuje się 5 najświeższych "newsów" 
+        
+        global $pdo;
+        $query = $pdo->prepare("SELECT * FROM articles ORDER BY ArticleID DESC LIMIT 5");
+        $query->execute();
+        
+        return $query->fetchAll();
+    }
+
+ 
 }
 
 ?>

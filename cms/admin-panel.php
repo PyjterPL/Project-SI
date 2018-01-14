@@ -17,7 +17,7 @@ session_start();
         <label>Panel Administratora</label>
         <input type="button" value="Artykuły" onclick="window.location.href='articles-options.php'" />
        
-        <input type="button" value="Użytkownicy" onclick="window.location.href='articles-options.php'" />
+        <input type="button" value="Użytkownicy" onclick="window.location.href='user-options.php'" />
        
         <input type="button" value="Strona główna" onclick="window.location.href='../index.php'" />
         

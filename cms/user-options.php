@@ -14,7 +14,9 @@ session_start();
 <body>
     <div class="container">
 <a href="../index.php" id="logo">Strona glowna</a>
-</br>
+<br/>
+<a href="admin-panel.php" id="logo">Powrót</a>
+<br/> <br/>
 <a href="user-add.php" id="logo">Dodaj użytkownika</a>
     <ol>
         <?php foreach($users as $user) { ?>

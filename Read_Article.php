@@ -1,8 +1,12 @@
 <?php 
+ $dir = getcwd();
 require_once('connection.php');
 require_once('article_class.php');
+require_once($dir.'/comments/comment_class.php');
 $article = new Article;
-$articles = $article->fetch_last();
+$specific = $article->fetch_data($_GET['id']);
+$comment = new Comment;
+$comments = $comment->fetch_last($_GET['id']);
 session_start();
 if((isset($_SESSION['logged'])) && ($_SESSION['logged']==true))
 {
@@ -15,7 +19,6 @@ else
     $mention = "Zaloguj się";
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -89,32 +92,58 @@ else
 			</ol>
 		
 		</div>
-        
-        <h1> STRONA TESTOWA PROJEKT</h1>
-      <!-- Pętla wyświetlająca artykuły -->
-	  <?php	foreach($articles as $article) { ?>
-		<br/> <br/><br/><br/>
-	<article>
-		<a href="Read_Article.php?id=<?php echo $article['ArticleID'];?>"> 
-			<h1> 
-				<font size="10" color="black"> 
-					<?php echo $article['Title']; ?> 
-				</font>  
-		  </h1>
-		</a>
-		<font size = "4" color = "grey"> 
-			<?php echo $article['Introduction']; ?> 
-		</font>
-	</article>
-		<br/> <br/>
-	  
-	  <?php } ?> 
-	  <!-- Koniec Foreach -->
 
-		<a href="screenshots/htmlcheatsheet.jpg" target="_blank">
-			<img alt="Zrzut ekranu pokazujący szybką edycję CSS" src="screenshots/htmlcheatsheet.jpg" />
-		</a>
-		
-		
+    
+      
+      <!-- Artykuł -->
+     <article>
+        <font size="10" color = "black"> 
+        <h1>
+            <?php echo $specific['Title'];?>
+        </h1>
+       </font>
+       <font size ="4" color = "grey">
+        <p>
+        <?php echo $specific['Content']; ?>
+        </p>
+        </font> 
+     </article>
+     <br/><br/><br/><br/><br/>
+     <?php foreach($comments as $comment) { ?>
+        <font size = "3" color = "black">
+        <h1> 
+            <?php echo $comment['Name']." ".$comment['InsertDate']; ?>
+        </h1>
+        </font>
+        <p>
+        <font size ="4" color ="red">
+        <?php echo $comment['Content']; ?>
+        </font>
+        </p>
+        <br/>
+    <?php } ?> 
+    <!-- koniec foreach -->
+    <br/><br/>
+    <?php if((isset($_SESSION['logged'])) && ($_SESSION['logged']==true))
+     { 
+          if(isset($_GET['error']))
+                {
+                    echo $_GET['error'];
+                }
+            $_SESSION['ArticleID'] = $_GET['id']; 
+           
+            /* echo "session: ".$_SESSION['ArticleID'];
+            echo "GET".$_GET['id'];
+            exit(); */  
+       
+     ?>
+        <form action="<?php $dir?>comments/comment-action.php" method="post" autocomplete="off">
+               Treść <textarea rows="15" cols="50" placeholder="Treść Komentarza" name="Treść_Kom"></textarea></br></br>
+               <input type="submit" value="Dodaj Komentarz" />
+         </form>
+   
+    <?php }
+    else echo"Jeśli chcesz dodać komentarz - Zaloguj się "; ?>
+     <br/><br/><br/><br/><br/>
     </body>
 </html>
