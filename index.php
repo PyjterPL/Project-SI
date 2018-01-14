@@ -55,7 +55,7 @@ else
         
     </head>
     <body>
-        
+        <!-- KOMENT TESTOWY -->
         <a href="#" class="scrollup"></a>
    
         <div class="nav">
