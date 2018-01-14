@@ -23,14 +23,12 @@ if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['Perm
                 }
                 ?>
                 
-                <div id="theme">
                 <form action="add-article-action.php" method="post" autocomplete="off">
                 
                 <input type="text" name="title" placeholder="Tytuł"/>
             
                 <input type="text" name="tags" placeholder="Tagi"/>
-                    </form>
-                </div>
+                 
                 <textarea rows="5" cols="80" placeholder="Wstęp" name="introduction"></textarea>
                     
                 <textarea rows="15" cols="80" placeholder="Treść" name="content"></textarea>
@@ -40,9 +38,9 @@ if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['Perm
                 <input type="submit" value="Dodaj do bazy" />
             
                 <input type="button" value="Powrót" onclick="window.location.href='articles-options.php'" />
-                    
+                </form> 
                 
-            </div>
+             </div>
         </body>
     </html>
 
