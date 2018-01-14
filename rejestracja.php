@@ -190,7 +190,7 @@
 				echo '<div class="error">'.$_SESSION['err_mail'].'</div>';
 				unset($_SESSION['err_mail']);
 			}
-		?>
+		 ?>
 		
         <input type="password" name ="haslo" placeholder="Hasło"/>
 		<?php // Sprawdzenie poprawności haseł 
@@ -227,8 +227,8 @@
 			}
 		?>
 		
-		<input type="submit" value = "Zarejetruj się"/>
-        <input type="button" value="Powrót" onclick="window.location.href='index.php'" />
+		<input type="submit" value = "Zarejestruj się"/>
+        <input type="button" value="Powrót" onclick="window.location.href='flog.php'" />
 		</form>
         
       

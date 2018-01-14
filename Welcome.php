@@ -16,15 +16,18 @@
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<title> TROCHĘ NIERÓWNY PANEL GŁÓWNY</title> 
+    <link rel="Stylesheet" type="text/css" href="CSS/Login.css" />
 </head>
 
 <body>
-
-	Rejestracja powiodła się. Teraz możesz zalogować się na swoje konto! <br/><br/>
+    <div id="Rejestracja_OK">
+	Rejestracja powiodła się. Teraz możesz zalogować się na swoje konto!
 	
-	<a href="index.php"> Zaloguj się na swoje konto !</a>
-	<br/><br/>
-
+    <form>
+        <input type="button" value="Zaloguj się" onclick="window.location.href='flog.php'" />
+    </form> 
+	
+    </div>
 
 </body>
 </html>

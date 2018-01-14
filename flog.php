@@ -41,7 +41,7 @@
     </form> 
 
     <form>
-        <input type="button" value="Powrót" onclick="window.location.href='index.php'" />
+        <input type="button" value="Strona główna" onclick="window.location.href='index.php'" />
     </form> 
     <!-- <button> <a href="index.php"></a>  Powrót</button>
    <!--<br> <a href="index.php" class="button">Powrót</a>-->
