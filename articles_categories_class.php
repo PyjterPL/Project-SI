@@ -27,6 +27,15 @@ class Category
         $query->execute();
     }
 
+    public function select_by_title($searchString)
+    {
+        global $pdo;
+        $query=$pdo->prepare('SELECT * articles WHERE Title LIKE %?% ');
+        $query->bindValue(1, $searchString);
+
+        return $query->fetchAll();
+    }
+
 }
 
 ?>

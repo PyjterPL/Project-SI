@@ -69,7 +69,7 @@ else
 						<li><a href="#">Sieci komputerowe</a></li>
 					</ul>
 				</li>
-				<li><a href="#">Szukaj</a>
+				<li><a href="article-search.php">Szukaj</a>
 				
 				</li>
 				<li><a href="#">Dodaj artykuł</a>

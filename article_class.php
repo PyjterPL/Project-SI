@@ -37,6 +37,33 @@ class Article
         
         return $query->fetchAll();
     }
+    public function select_by_title($searchString)
+    {
+        global $pdo;
+        $query=$pdo->prepare("SELECT * FROM articles WHERE Title LIKE '%$searchString%' ");
+      //  $query->bindValue(1, $searchString);
+      //  echo "<pre>"; print_r( $query);
+        $query->execute();
+        return $query->fetchAll();
+    }
+    public function select_by_tags($searchString)
+    {
+        global $pdo;
+        $query=$pdo->prepare("SELECT * FROM articles WHERE Tags LIKE '%$searchString%' ");
+      //  $query->bindValue(1, $searchString);
+      //  echo "<pre>"; print_r( $query);
+        $query->execute();
+        return $query->fetchAll();
+    }
+    public function select_by_author($searchString)
+    {
+        global $pdo;
+        $query=$pdo->prepare("SELECT * FROM articles WHERE Author LIKE '%$searchString%' ");
+      //  $query->bindValue(1, $searchString);
+      //  echo "<pre>"; print_r( $query);
+        $query->execute();
+        return $query->fetchAll();
+    }
 
  
 }
