@@ -11,7 +11,79 @@ body
     margin-left: auto;
 }
 
+#add_article
+{
+    background-color: whitesmoke;
+    width: 800px;
+    height: auto; 
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    -webkit-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    
+    border-radius: 25px;
+    border: 2px solid dodgerblue;
+    padding: 20px;
+    
+}
+
 #containerforregister
+{
+    background-color: whitesmoke;
+    width: 400px;
+    height: auto; 
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    -webkit-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    
+    border-radius: 25px;
+    border: 2px solid dodgerblue;
+    padding: 20px; 
+}
+
+#art_nav
+{
+    float: left;
+    background-color: whitesmoke;
+    width: 400px;
+    height: auto;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 10px;
+    -webkit-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid dodgerblue;
+    
+}
+
+#art_content
+{
+    float: left;
+    background-color: whitesmoke;
+    width: 800px;
+    height: auto; 
+    margin-top: 50px;
+    -webkit-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid dodgerblue;
+    
+}
+
+
+#Rejestracja_OK
 {
     background-color: whitesmoke;
     width: 400px;
@@ -33,7 +105,7 @@ body
 {
     background-color: whitesmoke;
     width: 400px;
-    height: 330px; 
+    height: auto; 
     padding: 50px;
     margin-left: auto;
     margin-right: auto;
@@ -131,8 +203,88 @@ input[type=button]:hover,
 input[type=submit]:hover
 {
     -webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
     border-color: royalblue;
     background-color: royalblue;
 }
+
+label
+{
+    text-align: center;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea
+{
+    border: 2px solid #ddd;
+    font-size: 16px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    resize: none;
+}
+
+textarea:focus-within
+{
+    border-color: royalblue;
+
+
+    
+}
+
+#theme
+{
+    margin-right: 1px;
+    
+}
+
+.kneflik-red
+{
+    width: 70px !important;
+    height: auto !important;
+    background-color: #ff6f6f !important;
+    color: white !important;
+    font-size: 14px !important;
+    padding: 5px !important;
+    margin-top: 0px !important;
+    border-radius: 6px !important;
+    
+}
+
+.kneflik-red:hover
+{
+    background-color: #ff4848 !important;
+}
+
+.kneflik-blue
+{
+    width: 70px !important;
+    height: auto !important;
+    background-color: dodgerblue !important;
+    color: white !important;
+    font-size: 14px !important;
+    padding: 5px !important;
+    margin-top: 0px !important;
+    border-radius: 6px !important;
+    
+}
+
+
+.kneflik-gren
+{
+    width: 70px !important;
+    height: auto !important;
+    background-color: #64c464 !important;
+    color: white !important;
+    font-size: 14px !important;
+    padding: 5px !important;
+    margin-top: 0px !important;
+    border-radius: 6px !important;
+    
+}
+
+
