@@ -1,28 +1,164 @@
 body
 {
-    padding-top: 120px;
-    font-family: Arial;
-
+    font-size: 24px;
+    background: White;
+    color: #545454;
 }
 
-.container
+.g-recaptcha
 {
-    width: 500px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-left: auto;
 }
-a:link, a:visited
+
+#containerforregister
 {
-    color: slategray;
-    text-decoration: none;
-    border-bottom: 1px dotted slategray;
+    background-color: whitesmoke;
+    width: 400px;
+    height: auto; 
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    -webkit-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    
+    border-radius: 25px;
+    border: 2px solid dodgerblue;
+    padding: 20px; 
 }
-a:hover
+
+#Rejestracja_OK
 {
-    color: #444;
-    border-bottom-color: #444;
+    background-color: whitesmoke;
+    width: 400px;
+    height: auto; 
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    -webkit-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    
+    border-radius: 25px;
+    border: 2px solid dodgerblue;
+    padding: 20px; 
 }
-small
+
+#container
 {
-    color: #444;
-    font-style: italic;
+    background-color: whitesmoke;
+    width: 400px;
+    height: auto; 
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    -webkit-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    
+    border-radius: 25px;
+    border: 2px solid dodgerblue;
+    padding: 20px;
+   
+    
+}
+
+
+imput
+{
+    width: 400px;
+    background-color: #efefef;
+    color: #666;
+    border: 2px solid #ddd;
+    font-size: 24px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 10px;  
+}
+    
+
+input[type=text]
+{
+    width: 400px;
+    background-color: #efefef;
+    color: #666;
+    border: 2px solid #ddd;
+    font-size: 24px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 10px;  
+    border-radius: 25px;
+}
+
+
+input[type=password]
+{
+   width: 400px;
+    background-color: #efefef;
+    color: #666;
+    border: 2px solid #ddd;
+    font-size: 24px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 10px;  
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+
+input[type=submit]
+{
+    width: 400px;
+    background-color: dodgerblue;
+    color: white;
+    border: 3px solid white;
+    font-size: 24px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    border-radius: 25px;
+}
+
+input[type=button]
+{
+    width: 400px;
+    background-color: dodgerblue;
+    color: white;
+    border: 2px solid #ddd;
+    font-size: 24px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    border-radius: 25px;
+}
+
+input[type=text]:focus,
+input[type=password]:focus
+{
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	-moz-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
+	border: 2px solid dodgerblue;
+	background-color: #d1e2ff;
+}
+
+input[type=button]:hover,
+input[type=submit]:hover
+{
+    -webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
+    border-color: royalblue;
+    background-color: royalblue;
+}
+
+label
+{
+    text-align: center;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }

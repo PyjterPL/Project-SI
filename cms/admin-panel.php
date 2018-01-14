@@ -9,17 +9,24 @@ session_start();
     <link rel="stylesheet" href="admin-panel-style.css" /> 
 </head>
 <body>
-    <div class="container">
-<a href="../index.php" id="logo">Strona glowna</a>
-    <ol>
-    <a href="articles-options.php">Artykuły</a>;
-    </ol>
-    <ol>
-    <a href="user-options.php">Użytkownicy</a>;
-    </ol>
-    <ol>
-    <a href="categories-options.php">Kategorie</a>;
-    </ol>
-    </div>
+    
+    
+<div id="container">
+    
+    <form>
+        <label>Panel Administratora</label>
+        <input type="button" value="Artykuły" onclick="window.location.href='articles-options.php'" />
+       
+        <input type="button" value="Użytkownicy" onclick="window.location.href='articles-options.php'" />
+       
+        <input type="button" value="Strona główna" onclick="window.location.href='../index.php'" />
+        
+        <input type="button" value="Panel Użytkownika" onclick="window.location.href='../panel.php'" />
+        
+        
+
+    </form>
+</div>
+    
 </body>
 </html>
