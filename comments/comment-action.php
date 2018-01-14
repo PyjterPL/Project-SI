@@ -44,8 +44,9 @@ if(isset($_POST['Treść_Kom'])&& !empty($_POST['Treść_Kom']))
 }
 else
  {
+    $A_ID =(int) $_SESSION['ArticleID'];
     $error="Uzupełnij wymagane pola";
     header("Location: ../Read_Article.php?error=$error&id=$A_ID");
-    
+   
 }
 ?>
