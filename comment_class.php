@@ -30,7 +30,7 @@ class Comment
     public function fetch_last($article_id)
     {   
         global $pdo;
-        $query = $pdo->prepare("SELECT CommentID,Content,Name,Votes,InsertDate FROM comments inner join users on comments.UserID = users.UserID where comments.ArticleID=? ORDER by CommentID desc");
+        $query = $pdo->prepare("SELECT Content,Name,votes,InsertDate FROM comments inner join users on comments.UserID = users.UserID where comments.ArticleID=? ORDER by CommentID desc");
         $query->bindValue(1,$article_id);
         $query->execute();
         

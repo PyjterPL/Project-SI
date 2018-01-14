@@ -98,28 +98,34 @@ else
       <!-- Artykuł -->
      <article>
         <font size="10" color = "black"> 
-        <h1>
-            <?php echo $specific['Title'];?>
-        </h1>
+              <h1>
+                    <?php echo $specific['Title'];?>
+              </h1>
        </font>
        <font size ="4" color = "grey">
-        <p>
-        <?php echo $specific['Content']; ?>
-        </p>
-        </font> 
+           <p>
+              <?php echo $specific['Content']; ?>
+          </p>
+       </font> 
      </article>
      <br/><br/><br/><br/><br/>
+   
      <?php foreach($comments as $comment) { ?>
-        <font size = "3" color = "black">
-        <h1> 
-            <?php echo $comment['Name']." ".$comment['InsertDate']; ?>
-        </h1>
+        <font size = "2" color = "black">
+             <h1> 
+                    <?php echo $comment['Name']." ".$comment['InsertDate']." "."głosy: ".$comment['Votes']; ?>
+              </h1>
         </font>
         <p>
-        <font size ="4" color ="red">
-        <?php echo $comment['Content']; ?>
-        </font>
+              <font size ="4" color ="red">
+                  <?php echo $comment['Content']; ?>
+              </font>
         </p>
+       
+        <From>
+            <input type="button" value="+" onclick="window.location.href='comments/vote.php?value=1&comID=<?php echo $comment['CommentID'] ;?> '" />
+            <input type="button" value="-" onclick="window.location.href='comments/vote.php?value=-1&comID=<?php echo $comment['CommentID'] ;?> '" />
+        </Form>
         <br/>
     <?php } ?> 
     <!-- koniec foreach -->
@@ -138,7 +144,7 @@ else
        
      ?>
         <form action="<?php $dir?>comments/comment-action.php" method="post" autocomplete="off">
-               Treść <textarea rows="15" cols="50" placeholder="Treść Komentarza" name="Treść_Kom"></textarea></br></br>
+               <textarea rows="15" cols="50" placeholder="Treść Komentarza" name="Treść_Kom"></textarea></br></br>
                <input type="submit" value="Dodaj Komentarz" />
          </form>
    

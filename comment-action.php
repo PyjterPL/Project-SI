@@ -1,6 +1,6 @@
 <?php
 require_once('../connection.php');
-require_once('comment_class.php');
+require_once('../comment_class.php');
 session_start();
 $comment = new Comment ;
 if(!isset($_SESSION['logged']) && !($_SESSION['logged']==true))
@@ -9,17 +9,17 @@ if(!isset($_SESSION['logged']) && !($_SESSION['logged']==true))
     exit();
 }
 
-if(isset($_POST['Treść_Kom'])&& !empty($_POST['Treść_Kom']))
+if(isset($_POST['Treść_Kom']))
 {
     $insertdate=date('Y-m-d G:i:s');
     $A_ID =(int) $_SESSION['ArticleID'];
     $Tresc = $_POST['Treść_Kom'];
     $U_ID=(int)$_SESSION['UserID'];
 
+   // $query=$pdo->prepare('INSERT INTO comments(CommentID,ArticleID,InsertDate,Content,UserID,Votes) VALUES("",?,?,?,?,"")');
 
    $query=$pdo->prepare("INSERT INTO comments(CommentID,ArticleID,InsertDate,Content,UserID,Votes) VALUES('','$A_ID','$insertdate','$Tresc','$U_ID','')");
   
-    // $query=$pdo->prepare('INSERT INTO comments(CommentID,ArticleID,InsertDate,Content,UserID,Votes) VALUES("",?,?,?,?,"")');
    //$query=$pdo->prepare('INSERT INTO comments(CommentID,ArticleID,InsertDate,Content,UserID,Votes) VALUES(?,?,?,?,?,?)');
  
   /*
@@ -39,13 +39,13 @@ if(isset($_POST['Treść_Kom'])&& !empty($_POST['Treść_Kom']))
  //echo $query->queryString;
  //   exit();
 
-    header("Location:../Read_Article.php?id=$A_ID");
+    header("Location: ../Read_Article.php?id=$A_ID");
    
 }
 else
  {
     $error="Uzupełnij wymagane pola";
-    header("Location: ../Read_Article.php?error=$error&id=$A_ID");
+    header("Location: ../Read_Article.php?error=$error");
     
 }
 ?>
