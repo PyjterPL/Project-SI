@@ -1,24 +1,7 @@
 ------------> PROSZĘ PRZECZYTAĆ <-------------
 
 
+Standardowo " U mnie działa" 
 
-PROSZĘ USTAWIĆ MAKS DŁ.HASŁA W BAZIE DANYCH NA 70 ! Inaczej utnie hasz i nie będzie możliwe zalogowanie się
-
-Zalogowanie się od tej pory na Piotr_Zuber h:admin będzie niemożliwe ze względu na niezahaszowania hasła
-
-Tradycyjnie, narazie tutaj, bo nie chciałbym uszkodzić bazy no i " u mnie działa". Wrzucę na główną jak tylko dostanę zielone światło. 
-Co tym razem zostało zrobione:
-
-- Dodano rejestracje, która nawet działa 
-- Wszelakie sprawdzania poprawnosci maila,loginu,hasła 
-- Sprawdzanie,czy login i mail się powtarzają w bazie 
-- Hasło jest haszowane 
-- Jest zaimplementowana reCAPTCHA od Google ( swoją drogą to naprawdę proste)
-- Zapytania SQL wykorzystują Try-Catch 
-- Dodałem podstronę z gratyfikacjami za rejestracje oraz z linkiem do index'u 
-
-Co trzeba jeszcze będzie zrobić:
-- AutoIncrement w phpmyadmin, tak wiem,że jest ale usunąłem manualnie jednego użytkownika i wydaje się,że zjadło go. W bazie brakuje UserID 2
-- Dodawanie opisu, avatara i tym podobnych będzie w panelu ( jak się domyślamy jeszcze tego nie ma) 
-- Kwestie rozdawania uprawnień --> to szybkiego obgadania.
-
+Komentarze działają, zalogowani mogą je dodawać niezalogowani nie mogą i wyświetla im się komunikat o konieczności logowania.
+Na stronie głównej będą się wyświetlać 5 najnowszych artykółów ( Tytuł + wstęp). Kliknięcie na Tytuł przenosi do strony z pełnym artykułem i komentarzami. Teraz w prawym górnym rogu zalogowany użytkownik bedzie widział swój login. Jest też turbofix dla edycji użytkowników, bo wcześniej przekierowywał do edycji artykółów ale już fixed + dodany przycisk powrotu. 
