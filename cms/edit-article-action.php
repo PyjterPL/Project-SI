@@ -25,14 +25,9 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
                 $file = file_get_contents($_FILES['obrazek']['tmp_name']);
             $max = 1024 *  64 ;
             $wielkosc_pliku = $_FILES['obrazek']['size'];
-        //  $typ_pliku = $_FILES['plik']['type'];
-        //  $nazwa_pliku = $_FILES['plik']['name'];
-        //  $tymczasowa_nazwa_plku = $_FILES['plik']['tmp_name'];
-        // $miejsce_docelowe = './obrazki/'.$nazwa_pliku;
         
             if ($wielkosc_pliku> $max)
                 {
-                    // echo 'Plik jest za duzy. Maksymalnie mozna wysłać plik o wielkosci'.$max.'.';
                     $error="Plik jest za duzy.Maksymalnie mozna wysłać plik o wielkosci $max KB";
                     header("Location: article-edit.php?error=$error&id=$id");
                     exit();
@@ -52,8 +47,7 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
                 exit();
         }
         else{
-            echo "nie ma pliku";
-           /* $query=$pdo->prepare('UPDATE articles SET CategoryID=?, UserID=?,Title=?,Introduction=?,Tags=?,Content=? WHERE ArticleID=?');
+            $query=$pdo->prepare('UPDATE articles SET CategoryID=?, UserID=?,Title=?,Introduction=?,Tags=?,Content=? WHERE ArticleID=?');
             $query->bindValue(1, $categoryID);
             $query->bindValue(2, $userID);
             $query->bindValue(3, $title);
@@ -63,7 +57,7 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
             $query->bindValue(7, $id);
             $query->execute();
             header('Location: articles-options.php');
-            exit();*/
+            exit();
         }
     }
 }

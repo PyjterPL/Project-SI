@@ -21,7 +21,7 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
     </head>
          <body>
             <div class="container">
-            <a href="articles-options.php">Powrót</a>
+            <a href="user-options.php">Powrót</a>
             </br>
             <h4>Edycja danych</h4>
                 <?php
