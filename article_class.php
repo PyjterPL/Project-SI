@@ -64,6 +64,15 @@ class Article
         $query->execute();
         return $query->fetchAll();
     }
+    public function select_by_category($categoryID)
+    {
+        global $pdo;
+        $query=$pdo->prepare("SELECT * FROM articles WHERE CategoryID =?");
+        $query->bindValue(1, $categoryID);
+      //  echo "<pre>"; print_r( $query);
+        $query->execute();
+        return $query->fetchAll();
+    }
 
  
 }

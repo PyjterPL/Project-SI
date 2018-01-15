@@ -1,7 +1,10 @@
 <?php 
 require_once('connection.php');
 require_once('article_class.php');
+require_once('articles_categories_class.php');
 $article = new Article;
+$category = new Category;
+$categories = $category->fetch_all();
 $articles = $article->fetch_last();
 session_start();
 if((isset($_SESSION['logged'])) && ($_SESSION['logged']==true))
@@ -61,12 +64,17 @@ else
         <div class="nav">
 			<ol>
 				<li><a href="index.php">Strona główna</a></li>
-				<li><a href="#">Artykuły</a>
+				<li><a href="#">Kategorie</a>
 					<ul>
-						<li><a href="#">C</a></li>
-						<li><a href="#">C++</a></li>
-						<li><a href="#">HTML</a></li>
-						<li><a href="#">Sieci komputerowe</a></li>
+
+						<?php
+						foreach($categories as $category)
+						{
+							echo '<li><a href="search-article-action.php?search-type=category&search-string='.$category['CategoryID'].'">'.$category['Name'].'</a></li>';
+						}
+
+						?>
+						
 					</ul>
 				</li>
 				<li><a href="article-search.php">Szukaj</a>

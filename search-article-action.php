@@ -4,21 +4,25 @@ require_once('article_class.php');
 
 session_start();
 $article = new Article;
+$searchString;
+$type;
 if(isset($_POST['search-string']) && isset($_POST['search-type']))
 {
 
-  //  echo $_POST['search-string'];
-   // echo $_POST['search-type'];
 
     $searchString = $_POST['search-string'];
     $type = $_POST['search-type'];
+}
+elseif(isset($_GET['search-string']) && isset($_GET['search-type']))
+{
+    $searchString = $_GET['search-string'];
+    $type = $_GET['search-type'];
+}
 
+if(!empty($article) && !empty($searchString)){
     switch($type)
     {
         case "title":
-      //  $query=$pdo->prepare('SELECT * articles WHERE Title LIKE %?% ');
-       // $query->bindValue(1, $searchString);
-      //  $query->execute();
         $articles =  $article->select_by_title($searchString);
         break;
         case "author":
@@ -27,9 +31,16 @@ if(isset($_POST['search-string']) && isset($_POST['search-type']))
         case "tags":
         $articles =  $article->select_by_tags($searchString);
         break;
-
-        
+        case "category":
+        $articles =  $article->select_by_category($searchString);
+        break;
     }
+
+    if(empty($articles))
+    {
+        echo "Brak wyników";
+    }
+    else{
     	foreach($articles as $article) { ?>
       <br/> <br/><br/><br/>
   <article>
@@ -47,6 +58,8 @@ if(isset($_POST['search-string']) && isset($_POST['search-type']))
       <br/> <br/>
     
     <?php }  
+    }
+}
 
     
    
@@ -77,10 +90,11 @@ if(isset($_POST['search-string']) && isset($_POST['search-type']))
                 
             
    // }
-}
+//}
 else
 {
-
+    //echo $_POST['search-string']; 
+  //  echo $_POST['search-type'];
     header('Location: index.php');
     exit();
 }
