@@ -36,8 +36,35 @@ class Comment
         
         return $query->fetchAll();
     }
+    public function fetch_first($article_id)
+    {   
+        global $pdo;
+        $query = $pdo->prepare("SELECT CommentID,Content,Name,Votes,InsertDate FROM comments inner join users on comments.UserID = users.UserID where comments.ArticleID=? ORDER by CommentID asc");
+        $query->bindValue(1,$article_id);
+        $query->execute();
+        
+        return $query->fetchAll();
+    }
+    public function fetch_hVote($article_id)
+    {   
+        global $pdo;
+        $query = $pdo->prepare("SELECT CommentID,Content,Name,Votes,InsertDate FROM comments inner join users on comments.UserID = users.UserID where comments.ArticleID=? ORDER by Votes desc");
+        $query->bindValue(1,$article_id);
+        $query->execute();
+        
+        return $query->fetchAll();
+    }
 
- 
+    public function fetch_lVote($article_id)
+    {   
+        global $pdo;
+        $query = $pdo->prepare("SELECT CommentID,Content,Name,Votes,InsertDate FROM comments inner join users on comments.UserID = users.UserID where comments.ArticleID=? ORDER by Votes asc");
+        $query->bindValue(1,$article_id);
+        $query->execute();
+        
+        return $query->fetchAll();
+    }
+
 }
 
 ?>

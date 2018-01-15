@@ -6,7 +6,23 @@ require_once($dir.'/comments/comment_class.php');
 $article = new Article;
 $specific = $article->fetch_data($_GET['id']);
 $comment = new Comment;
-$comments = $comment->fetch_last($_GET['id']);
+
+switch ($_GET['cSort'])
+{
+    case 'last':  $comments = $comment->fetch_last($_GET['id']);
+                 break;
+    case 'first': $comments = $comment->fetch_first($_GET['id']);
+                 break;
+    case 'low'  : $comments = $comment->fetch_lVote($_GET['id']);
+                 break;        
+    case 'high':  $comments = $comment->fetch_hVote($_GET['id']);   
+                 break;
+    default:      $comments = $comment->fetch_last($_GET['id']);
+                 break;
+
+}
+
+
 session_start();
 if((isset($_SESSION['logged'])) && ($_SESSION['logged']==true))
 {
@@ -109,7 +125,16 @@ else
        </font> 
      </article>
      <br/><br/><br/><br/><br/>
-   
+    <!-- Sposób sortowania komentarzy -->
+     <form>
+        <font size="2" color ="black">Sortowanie Komentarzy
+             <input type="button" value="Najstarsze" onclick="window.location.href='Read_Article.php?cSort=first&id=<?php echo $_GET['id'] ;?> '" />
+             <input type="button" value="Najnowsze" onclick="window.location.href='Read_Article.php?cSort=last&id=<?php echo $_GET['id'] ;?> '" />
+             <input type="button" value="Najgorsze" onclick="window.location.href='Read_Article.php?cSort=low&id=<?php echo $_GET['id'] ;?> '" />
+             <input type="button" value="Najlepsze" onclick="window.location.href='Read_Article.php?cSort=high&id=<?php echo $_GET['id'] ;?> '" />
+        </font>
+    </form>
+    <!-- Komentarze -->
      <?php foreach($comments as $comment) { ?>
         <font size = "2" color = "black">
              <h1> 
@@ -123,8 +148,8 @@ else
         </p>
        
         <From>
-            <input type="button" value="+" onclick="window.location.href='comments/vote.php?value=1&comID=<?php echo $comment['CommentID'] ;?> '" />
-            <input type="button" value="-" onclick="window.location.href='comments/vote.php?value=-1&comID=<?php echo $comment['CommentID'] ;?> '" />
+            <input type="button" value="+" onclick="window.location.href='comments/vote-action.php?value=1&comID=<?php echo $comment['CommentID'] ;?> '" />
+            <input type="button" value="-" onclick="window.location.href='comments/vote-action.php?value=-1&comID=<?php echo $comment['CommentID'] ;?> '" />
         </Form>
         <br/>
     <?php } ?> 

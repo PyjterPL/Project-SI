@@ -55,7 +55,7 @@ else
         
     </head>
     <body>
-        <!-- KOMENT TESTOWY -->
+        
         <a href="#" class="scrollup"></a>
    
         <div class="nav">
@@ -70,7 +70,7 @@ else
 					</ul>
 				</li>
 				<li><a href="article-search.php">Szukaj</a>
-				<!-- Komentarz -->
+				
 				</li>
 				<li><a href="#">Dodaj artykuł</a>
 				
