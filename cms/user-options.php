@@ -4,8 +4,8 @@ require_once('../user_class.php');
 $user = new User;
 $users = $user->fetch_all();
 session_start();
-?>
-
+if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['PermissionID']<3)
+{ ?>
 <html>
 <head>
     <title>CMS</title>
@@ -33,3 +33,10 @@ session_start();
     </div>
 </body>
 </html>
+<?php }
+else
+{
+    header('Location: ../index.php');
+    exit();
+}
+?>

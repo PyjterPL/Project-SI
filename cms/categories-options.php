@@ -4,7 +4,9 @@ require_once('../articles_categories_class.php');
 $category = new Category;
 $categories = $category->fetch_all();
 session_start();
-?>
+if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['PermissionID']<3)
+{ ?>
+
 
 <html>
 <head>
@@ -33,3 +35,10 @@ session_start();
     </div>
 </body>
 </html>
+<?php }
+else
+{
+    header('Location: ../index.php');
+    exit();
+}
+?>

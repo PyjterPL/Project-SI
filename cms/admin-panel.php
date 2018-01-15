@@ -1,7 +1,8 @@
 <?php
 require_once('../connection.php');
 session_start();	
-?>
+if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['PermissionID']<3)
+{ ?>
 
 <html>
 <head>
@@ -32,3 +33,10 @@ session_start();
     
 </body>
 </html>
+<?php }
+else
+{
+    header('Location: ../index.php');
+    exit();
+}
+?>
