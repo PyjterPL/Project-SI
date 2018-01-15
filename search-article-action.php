@@ -47,6 +47,7 @@ if(!empty($article) && !empty($searchString)){
       <a href="Read_Article.php?id=<?php echo $article['ArticleID'];?>"> 
           <h1> 
               <font size="10" color="black"> 
+              <?php	if(!empty($article['Image']))echo '<img height="100" width="100" src="data:image/jpeg;base64,'.base64_encode( $article['Image'] ).'"/>'; ?>
                   <?php echo $article['Title']; ?> 
               </font>  
         </h1>

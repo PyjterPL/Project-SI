@@ -115,6 +115,7 @@ else
      <article>
         <font size="10" color = "black"> 
               <h1>
+              <?php	if(!empty($specific['Image']))echo '<img height="100" width="100" src="data:image/jpeg;base64,'.base64_encode( $specific['Image'] ).'"/>'; ?>
                     <?php echo $specific['Title'];?>
               </h1>
        </font>
