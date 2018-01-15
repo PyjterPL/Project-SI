@@ -7,6 +7,7 @@ $article = new Article;
 $specific = $article->fetch_data($_GET['id']);
 $comment = new Comment;
 
+if(isset($_GET['cSort']))
 switch ($_GET['cSort'])
 {
     case 'last':  $comments = $comment->fetch_last($_GET['id']);
@@ -21,6 +22,7 @@ switch ($_GET['cSort'])
                  break;
 
 }
+else $comments = $comment->fetch_last($_GET['id']);
 
 
 session_start();

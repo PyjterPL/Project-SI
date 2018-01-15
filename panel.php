@@ -29,6 +29,7 @@
 	if ($_SESSION['PermissionID']==1)//Jeśli to admin
 	{
 		echo '<br><a href="cms/admin-panel.php" id="logo">Panel Administratora</a></br>';
+		echo '<br><a href="user_edit/user_edition.php" id="logo">Edycja Danych</a></br>';
 	}
 ?>  
         <input type="button" value="Strona główna" onclick="window.location.href='index.php'"/>
