@@ -2,10 +2,14 @@
  $dir = getcwd();
 require_once('connection.php');
 require_once('article_class.php');
+require_once('articles_categories_class.php');
 require_once($dir.'/comments/comment_class.php');
 $article = new Article;
 $specific = $article->fetch_data($_GET['id']);
 $comment = new Comment;
+
+$category = new Category;
+$categories = $category->fetch_all();
 
 if(isset($_GET['cSort']))
 switch ($_GET['cSort'])
@@ -77,43 +81,40 @@ else
     </head>
     <body>
         
-        <a href="#" class="scrollup"></a>
-   
+      
+    <div id="Main-Container">
+       
         <div class="nav">
-			<ol>
-				<li><a href="index.php">Strona główna</a></li>
-				<li><a href="#">Artykuły</a>
-					<ul>
-						<li><a href="#">C</a></li>
-						<li><a href="#">C++</a></li>
-						<li><a href="#">HTML</a></li>
-						<li><a href="#">Sieci komputerowe</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Szukaj</a>
-				
-				</li>
-				<li><a href="#">Dodaj artykuł</a>
-				
-				</li>
-				<li><a href="#">O autorach</a>
-					<ul>
-						<li><a href="#">Snopek Jan</a></li>
-						<li><a href="#">Sladkowski Konrad</a></li>
-						<li><a href="#">Zuber Piotr</a></li>
-					</ul>
-				</li>
-                <li><a href="#">Kontakt</a>
-				
-				</li>
-				<li><a href="<?php echo $file?>"> <?php echo $mention?> </a></li>
-			</ol>
-		
-		</div>
+
+            <ol>
+              
+                <li><a href="index.php">Strona główna</a></li>
+
+                <li><a href="#">Kategorie</a>
+                    <ul>
+
+                    <?php
+                    foreach($categories as $category)
+                    {
+                    echo '<li><a href="search-article-action.php?search-type=category&search-string='.$category['CategoryID'].'">'.$category['Name'].'</a></li>';
+                    }
+                    ?>
+                    
+                    </ul>
+                </li>
+
+                <li><a href="article-search.php">Szukaj</a></li>
+
+                <li><a href="<?php echo $file?>"> <?php echo $mention?> </a></li>
+
+            </ol>
+
+        </div>
 
     
       
       <!-- Artykuł -->
+      <div id="article-read">
      <article>
         <font size="10" color = "black"> 
               <h1>
@@ -127,8 +128,11 @@ else
           </p>
        </font> 
      </article>
-     <br/><br/><br/><br/><br/>
+     </div>
+
+
     <!-- Sposób sortowania komentarzy -->
+    <div id="komentarze">
      <form>
         <font size="2" color ="black">Sortowanie Komentarzy
              <input type="button" value="Najstarsze" onclick="window.location.href='Read_Article.php?cSort=first&id=<?php echo $_GET['id'] ;?> '" />
@@ -137,15 +141,23 @@ else
              <input type="button" value="Najlepsze" onclick="window.location.href='Read_Article.php?cSort=high&id=<?php echo $_GET['id'] ;?> '" />
         </font>
     </form>
+                </div>
+    
+
+
+    
     <!-- Komentarze -->
      <?php foreach($comments as $comment) { ?>
-        <font size = "2" color = "black">
-             <h1> 
+
+        <div id="komentarze-wpis">
+
+        <font size = "6" color = "black">
+             
                     <?php echo $comment['Name']." ".$comment['InsertDate']." "."głosy: ".$comment['Votes']; ?>
-              </h1>
+              
         </font>
         <p>
-              <font size ="4" color ="red">
+              <font size ="4" color ="grey">
                   <?php echo $comment['Content']; ?>
               </font>
         </p>
@@ -154,10 +166,14 @@ else
             <input type="button" value="+" onclick="window.location.href='comments/vote-action.php?value=1&comID=<?php echo $comment['CommentID'] ;?> '" />
             <input type="button" value="-" onclick="window.location.href='comments/vote-action.php?value=-1&comID=<?php echo $comment['CommentID'] ;?> '" />
         </Form>
-        <br/>
+        
+     </div>
     <?php } ?> 
     <!-- koniec foreach -->
-    <br/><br/>
+
+
+   
+    <div id="dodaj-komentarz">
     <?php if((isset($_SESSION['logged'])) && ($_SESSION['logged']==true))
      { 
           if(isset($_GET['error']))
@@ -171,13 +187,27 @@ else
             exit(); */  
        
      ?>
+
+
+
         <form action="<?php $dir?>comments/comment-action.php" method="post" autocomplete="off">
-               <textarea rows="15" cols="50" placeholder="Treść Komentarza" name="Treść_Kom"></textarea></br></br>
+               <textarea rows="8" cols=80 placeholder="Treść Komentarza" name="Treść_Kom"></textarea></br></br>
                <input type="submit" value="Dodaj Komentarz" />
          </form>
-   
+         </div>
     <?php }
     else echo"Jeśli chcesz dodać komentarz - Zaloguj się "; ?>
-     <br/><br/><br/><br/><br/>
+     
+
+            
+     </div>
+
+    <div id="FOOTER">
+
+        <h2>&copy; 2018 Politechnika Śląska wydział Elektryczny Informatyka Sekcja 5 Sem V
+            <p>Strona ta powstała na potrzeby projektu z przedmiotu "Serwisy Internetowe" jej autorami są Snopek Jan, Sladkowski Konrad, Zuber Piotr</P>
+        </h2>
+
+    </div>
     </body>
 </html>

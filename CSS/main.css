@@ -225,6 +225,7 @@ a:active
 	padding: 5px;
 	color: white;
 	background-color: dodgerblue;
+	margin-bottom: 0px;
 
 	
 }
@@ -234,3 +235,45 @@ h2
 	font-size: 18px;
 	text-align: center;
 }
+
+
+#article-read
+{
+	width: 80%;
+   
+   padding: 30px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   border-bottom: 1px dashed dodgerblue;
+
+}
+
+#komentarze
+{
+	width: 80%;
+	margin-top: 20px;
+	padding-left: 30px;
+}
+
+#komentarze-wpis
+{
+	width: 80%;
+	margin-top: 30px;
+	padding-left: 30px;
+	padding-bottom: 10px;
+	border-bottom: 1px dashed dodgerblue;
+}
+
+#dodaj-komentarz
+{
+	margin-top: 50px;
+	width: 80%;
+	padding: 30px;
+	border-bottom: 1px dashed dodgerblue;
+}
+
+#textarea
+{
+	resize: none;
+}
+
