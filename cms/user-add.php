@@ -44,7 +44,7 @@ if( isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  ($_SESSION['Pe
                         <input type="text" placeholder="Email" name="mail"></textarea>
                         <input type="text" name="description" placeholder="Opis" value=""/>
                         <input type="file" name="obrazek" accept="image/jpeg,image/gif,image/jpg" />
-                        <input list="permissions" placeholder="Kliknij aby wybrać uprawninia" name = "permission">
+                        <input list="permissions" placeholder="Kliknij aby wybrać uprawnienia" name = "permission">
 
 
                         <datalist id="permissions">                                          

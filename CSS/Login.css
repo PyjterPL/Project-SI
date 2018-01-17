@@ -460,3 +460,35 @@ textarea:focus-within
     border-radius: 25px;
     background-color: rgb(247, 247, 247);
 }
+
+#category-opt
+{
+    width: 60%;
+    margin: 0px auto;
+    background-color: red;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 30px;
+    border: 2px solid dodgerblue;
+    border-radius: 25px;
+    background-color: rgb(247, 247, 247);
+}
+
+#category-wpis
+{
+    width:90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 20px;
+    border-bottom: 1px dashed dodgerblue
+
+}
+
+#add-user-inputs-edit
+{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}

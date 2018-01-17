@@ -15,13 +15,13 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
     <html>
     <head>
         <title>Edycja kateogrii</title>
-        <link rel="stylesheet" href="admin-panel-style.css" /> 
+        <link rel="stylesheet" href="../CSS/Login.css" /> 
     </head>
          <body>
-            <div class="container">
-            <a href="categories-options.php">Powrót</a>
-            </br>
-            <h4>Edycja kategorii</h4>
+            <div id="container">
+            
+            <label>Edytuj Kategorię</label>
+            </br></br>
                 <?php
                 if(isset($_GET['error']))
                 {
@@ -32,8 +32,8 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
 
                 <form action="edit-category-action.php?id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
                 <input type="text" name="name" placeholder="Nazwa" value="<?php echo $data['Name']; ?>"/></br></br>
-
                 <input type="submit" value="Edytuj" />
+                <input type="button" value="Powrót" onclick="window.location.href='categories-options.php'" /> 
                 </form>
             </div>
         </body>

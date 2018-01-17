@@ -14,27 +14,29 @@ if( isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  ($_SESSION['Pe
     <html>
     <head>
         <title>Dodawanie użytkownika</title>
-        <link rel="stylesheet" href="admin-panel-style.css" /> 
+        <link rel="stylesheet" href="../CSS/Login.css" /> 
     </head>
-         <body>
-            <div class="container">
-            <a href="articles-options.php">Powrót</a>
-            </br>
-            <h4>Dodawanie użytkownika</h4>
-                <?php
-                if(isset($_GET['error']))
-                {
-                    echo $_GET['error'];
-                }
-                ?>
 
-                <form action="add-category-action.php" method="post" enctype="multipart/form-data">
-                Kategoria <input type="text" name="name" placeholder="Nazwa" value=""/></br></br>
-               
+
+    <body>
+        <div id="container">
+            <label>Dodaj Kategorię</label>
+
+            <?php
+            if(isset($_GET['error']))
+            {
+            echo $_GET['error'];
+            }
+            ?>
+
+            <form action="add-category-action.php" method="post" enctype="multipart/form-data"></br>
+                <input type="text" name="name" placeholder="Kategoria" value=""/></br></br>
                 <input type="submit" value="Dodaj" />
-                </form>
-            </div>
-        </body>
+                <input type="button" value="Powrót" onclick="window.location.href='categories-options.php'" /> 
+            </form>
+
+        </div>
+    </body>
     </html>
 
     <?php
