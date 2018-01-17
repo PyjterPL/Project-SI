@@ -130,7 +130,9 @@ else
      </article>
      </div>
 
+    <?php  if((isset($_SESSION['logged'])) && ($_SESSION['logged']==true))
 
+     { ?>
     <!-- Sposób sortowania komentarzy -->
     <div id="komentarze">
      <form>
@@ -147,6 +149,7 @@ else
 
     
     <!-- Komentarze -->
+    
      <?php foreach($comments as $comment) { ?>
 
         <div id="komentarze-wpis">
@@ -169,6 +172,7 @@ else
         
      </div>
     <?php } ?> 
+     <?php } ?>
     <!-- koniec foreach -->
 
 
