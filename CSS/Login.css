@@ -438,3 +438,25 @@ textarea:focus-within
     width: 50%;
     padding: 20px;
 }
+
+#rameczka
+{
+    margin-top: 20px;
+    border: 1px dashed dodgerblue;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+#edit-opt
+{
+    width: 70%;
+    margin: 0px auto;
+    background-color: red;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 20px;;
+    border: 2px solid dodgerblue;
+    border-radius: 25px;
+    background-color: rgb(247, 247, 247);
+}
