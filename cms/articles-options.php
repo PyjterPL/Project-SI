@@ -31,15 +31,20 @@ if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['Perm
                     <li>
 
                         <div id="art-wpis">
+                            <div id="art-placement">
                             <b> <?php echo $article['Title'];?> </b>
-
-                            - <small> dodano <?php echo date("Y-m-d H:i:s",strtotime($article['InsertDate'])); ?> </small>
+                </div>
                             
+                        
+                            <small> Dodano <?php echo date("Y-m-d H:i:s",strtotime($article['InsertDate'])); ?> </small>
+               
+                            <div id="edit-buttons">
                             <input class="kneflik-gren"  type="button" value="Podgląd" onclick="window.location.href='../Read_Article.php?id=<?php echo $article['ArticleID']; ?>'" />
             
                             <input class="kneflik-blue"  type="button" value="Edytuj" onclick="window.location.href='article-edit.php?id=<?php echo $article['ArticleID']; ?>'" />
             
                             <input class="kneflik-red"  type="button" value="Usuń" onclick="window.location.href='article-delete.php?id=<?php echo $article['ArticleID']; ?>'" />
+                              </div>
                          </div>
 
                     </li>

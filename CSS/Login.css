@@ -12,7 +12,7 @@ body
     margin-left: auto;
 }
 
-
+    
 
 #add_article
 {
@@ -115,12 +115,17 @@ body
     
 }
 
+#art-placement
+{
+    width: 80%;
+}
+
 #art-wpis
 {
     width:95%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 20px;
     border-bottom: 1px dashed dodgerblue
     
 }
@@ -141,6 +146,21 @@ body
     border-radius: 25px;
     border: 2px solid dodgerblue;
     padding: 20px; 
+}
+
+#edit-buttons
+{
+    float: right;
+    margin: 2px;
+
+}
+
+#date-css
+{  
+    width: 20%;
+    float: left;
+    background-color: red;
+    margin: 2px;
 }
 
 #container
@@ -164,6 +184,8 @@ body
 }
 
 
+
+
 input
 {
     width: 400px;
@@ -177,6 +199,30 @@ input
 }
     
 
+
+input[type=file]
+{
+    width: 400px;
+    background-color: #efefef;
+    color: #666;
+    border: 2px solid #ddd;
+    font-size: 24px;
+    padding: 10px;
+    margin-top: 10px;  
+}
+
+input[type=list]
+{
+    width: 400px;
+    background-color: #efefef;
+    color: #666;
+    border: 2px solid #ddd;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 25px;
+   
+}
+ 
 input[type=text]
 {
     width: 400px;
@@ -270,12 +316,26 @@ textarea
     resize: none;
 }
 
+#add-article-text
+{
+    border-bottom: 1px dashed dodgerblue;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+}
+
 textarea:focus-within
 {
     border-color: royalblue;
 
 
     
+}
+
+#add-article-inputs
+{
+    border-bottom: 1px dashed dodgerblue;
+    padding: 20px;
 }
 
 #theme
