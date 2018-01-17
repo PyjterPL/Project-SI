@@ -10,12 +10,13 @@ $category= new Category;
     <html>
     <head>
         <title>Wyszukiwarka</title>
+        <link rel="stylesheet" href="CSS/Login.css" /> 
     </head>
          <body>
-            <div class="container">
+            <div id="container">
 
             </br>
-            <h4>Wyszukiwarka</h4>
+            <label>Wyszukiwarka</label>
                 <?php
                 if(isset($_GET['error']))
                 {
@@ -24,12 +25,17 @@ $category= new Category;
                 ?>
 
                 <form action="search-article-action.php" method="post" autocomplete="off" >
-                <input type="text" name="search-string" placeholder="Wpisz szukaną frazę"/></br></br>
-                <input type="radio" name="search-type" value="title" checked> Tytuł<br>
-                <input type="radio" name="search-type" value="author"> Autor<br>
-                <input type="radio" name="search-type" value="tags"> Tagi  <br>
 
-                <input type="submit" value="Szukaj" />
+                    <input type="text" name="search-string" placeholder="Wpisz szukaną frazę"/>
+                    <div id="wyszukaj">
+                    
+                    <label> <input type="radio" name="search-type" value="title" checked>Tytuł</label></br>
+                    <label><input type="radio" name="search-type" value="author">Autor</label></br>
+                    <label><input type="radio" name="search-type" value="tags">Tagi </label></br>
+                    
+                    </div>
+                    <input type="submit" value="Szukaj" />
+                    
                 </form>
             </div>
         </body>

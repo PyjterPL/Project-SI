@@ -8,7 +8,8 @@ body
 
 .g-recaptcha
 {
-    margin-left: auto;
+    padding: 30px;
+        margin-left: auto;
     margin-left: auto;
 }
 
@@ -223,6 +224,12 @@ input[type=list]
    
 }
  
+input[type=radio]
+{
+    width: 20px;
+    padding: 20px;
+}
+
 input[type=text]
 {
     width: 400px;
@@ -236,6 +243,11 @@ input[type=text]
     border-radius: 25px;
 }
 
+input[type=checkbox]
+{
+    margin-left: 5px;
+    width: 30px;
+}
 
 input[type=password]
 {
@@ -413,3 +425,16 @@ textarea:focus-within
     padding: 30px;
 }
 
+#checkbox-div
+{
+    border: 2px dashed dodgerblue;
+    border-radius: 25px;
+    padding: 30px;
+}
+
+
+#wyszukaj
+{
+    width: 50%;
+    padding: 20px;
+}

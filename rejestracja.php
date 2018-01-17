@@ -202,12 +202,12 @@
 		?>
 		
 		<input type="password" name ="haslo2" placeholder="Powtórz Hasło"/>
+		</br> 
+
+		<div id="checkbox-div">
+
+			<label> <input type="checkbox" name = "regulamin" /> Akceptuj Regulamin </label>
 		
-		<label>
-       
-		<input type="checkbox" name = "regulamin" /> Akceptuje regulamin
-		</label>
-        
 		<?php // Sprawdzenie akceptacji regulaminu (checkbox)
 			if(isset($_SESSION['err_regulamin']))
 			{
@@ -215,7 +215,9 @@
 				unset($_SESSION['err_regulamin']);
 			}
 		?>
-        
+        </div>
+		
+
 		
 		<div class="g-recaptcha" data-sitekey="6LfT8j4UAAAAAMdYetjCV2EEf_F3zkUe_o-Wa-HH"></div>
 		

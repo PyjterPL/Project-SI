@@ -36,6 +36,10 @@ if(!empty($article) && !empty($searchString)){
         break;
     }
 
+
+
+
+
     if(empty($articles))
     {
         echo "Brak wyników";
