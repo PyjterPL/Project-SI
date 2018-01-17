@@ -1,4 +1,4 @@
- <?php 
+<?php 
 //require_once('user_ed-action.php');
 require_once('../connection.php');
 session_start();
@@ -11,6 +11,7 @@ if(!(isset($_POST['eName'])) || empty($_POST['eName']))
 {
     $_SESSION['err_login'] = "Nie wpisałeś nazwy użytkownika !";
     header("Location: user_edition.php");
+    exit();
 }
     $query=$pdo->prepare('SELECT Name FROM users where Name = ? ');
     $query->bindValue(1,$_POST['eName']);
@@ -21,6 +22,7 @@ if(!(isset($_POST['eName'])) || empty($_POST['eName']))
     {
         $_SESSION['err_login'] = "Podana nazwa jest już zajęta!";
         header("Location: user_edition.php");
+        exit();
     }
 
     $query=$pdo->prepare('UPDATE users SET Name=? where Name=? ');

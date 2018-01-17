@@ -11,6 +11,7 @@ if(!(isset($_POST['ePass'])) || !(isset($_POST['ePassP']))  || empty($_POST['ePa
 {
     $_SESSION['err_login'] = "Uzupełnij Pola !";
     header("Location: user_edition.php");
+    exit();
 }
 
 $haslo= $_POST['ePass'];
