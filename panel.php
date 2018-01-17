@@ -28,12 +28,13 @@
 	echo"<p><b>E-mail</b>: ".$_SESSION['Email']; 
 	if ($_SESSION['PermissionID']==1)//Jeśli to admin
 	{
-		echo '<br><a href="cms/admin-panel.php" id="logo">Panel Administratora</a></br>';
-		echo '<br><a href="user_edit/user_edition.php" id="logo">Edycja Danych</a></br>';
+		//echo '<br><a href="cms/admin-panel.php" id="logo">Panel Administratora</a></br>';
+		echo '<input type="button" value="Panel administratora" onclick="window.location.href=\'cms/admin-panel.php\'"/>' ;
+		echo '<input type="button" value="Edycja danych" onclick="window.location.href=\'user_edit/user_edition.php\'"/>' ;
 	}
 ?>  
         <input type="button" value="Strona główna" onclick="window.location.href='index.php'"/>
-
+		
         </div>
 </body>
 </html>
