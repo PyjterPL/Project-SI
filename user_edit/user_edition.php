@@ -18,6 +18,8 @@ else $komm="";
 <head> 
 
     <label> <?php echo $name."    ".$komm; ?> </label>
+    </br>
+    <a href="../panel.php">Powrót</a>
 </head>
 
 <body>
@@ -80,8 +82,8 @@ else $komm="";
     <br/><br/>
     <form action = "user_avatar_edition.php" method="POST"enctype="multipart/form-data">
 
-        <label> Zmien Avatar </label>
-        <input type = "file" name = "eAvatar" >
+        <label> Zmien Avatar </label> 
+        <input type="file" name="eAvatar" accept="image/jpeg,image/gif,image/jpg" /></br></br>
         <input type="submit" value = "Wyślij"/>
         <?php // Sprawdzenie poprawności e-mail
 			if(isset($_SESSION['err_avatar']))
