@@ -7,7 +7,7 @@ if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['Perm
 <html>
 <head>
     <title>CMS</title>
-    <link rel="stylesheet" href="admin-panel-style.css" /> 
+    <link rel="stylesheet" href="../CSS/Login.css" /> 
 </head>
 <body>
     

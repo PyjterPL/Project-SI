@@ -2,6 +2,7 @@ body
 {
     font-size: 24px;
     background: White;
+    background-image: url("../screenshots/logintlo.jpg");
     color: #545454;
 }
 
@@ -10,6 +11,8 @@ body
     margin-left: auto;
     margin-left: auto;
 }
+
+
 
 #add_article
 {
@@ -48,6 +51,36 @@ body
     padding: 20px; 
 }
 
+#article-opt
+{
+	width: 70%;
+    margin: 0px auto;
+    background-color: red;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    padding: 0;
+    border: 2px solid dodgerblue;
+    border-radius: 25px;
+    background-color: rgb(247, 247, 247);
+}
+
+#article-navi
+{
+    background-color: whitesmoke;
+    width: 66%;
+    height: auto;
+    margin-top: 20px; 
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    border: 2px solid dodgerblue;
+    -webkit-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 39px 5px rgba(0,0,0,0.75);
+   padding: 10px;
+}
+
 #art_nav
 {
     float: left;
@@ -82,6 +115,15 @@ body
     
 }
 
+#art-wpis
+{
+    width:95%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px dashed dodgerblue
+    
+}
 
 #Rejestracja_OK
 {
@@ -122,7 +164,7 @@ body
 }
 
 
-imput
+input
 {
     width: 400px;
     background-color: #efefef;
@@ -255,10 +297,7 @@ textarea:focus-within
     
 }
 
-.kneflik-red:hover
-{
-    background-color: #ff4848 !important;
-}
+
 
 .kneflik-blue
 {
@@ -287,4 +326,21 @@ textarea:focus-within
     
 }
 
+.kneflik-red:hover
+{
+    background-color: #ff4848 !important;
+    border: 2px solid #ff1a1a !important;
+}
+
+.kneflik-blue:hover
+{
+    background-color: #3946ff !important;
+    border: 2px solid #1e22ec !important;
+}
+
+.kneflik-gren:hover
+{
+    background-color: #3bbb56 !important;
+    border: 2px solid #079e39 !important;
+}
 

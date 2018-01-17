@@ -19,111 +19,123 @@ else
 }
 ?>
 
-<!DOCTYPE html>
-<html>
 
-    <head>
+
+<!DOCTYPE html>
+<HTYML>
+
+    <HEAD>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Projekt SI</title>
         <meta name="description" content="test">
         <link rel="stylesheet" href="CSS/main.css">
         
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		
         <script src="jquery.scrollTo.min.js"></script>
 	
-	<script>
-		
-		jQuery(function($)
-		{
+
+		<SCRIPT>
+			jQuery(function($)
+			{
+				$.scrollTo(0);
+				$('.scrollup').click(function() { $.scrollTo($('body'), 1000); });
+			}
+			);
 			
-			$.scrollTo(0);
-			$('.scrollup').click(function() { $.scrollTo($('body'), 1000); });
-		}
-		);
+			$(window).scroll(function()
+			{
+				if($(this).scrollTop()>400) $('.scrollup').fadeIn();
+				else $('.scrollup').fadeOut();		
+			}
+			);
+		</SCRIPT>
+
+	</HEAD>
+	
+
+    <BODY>
+        
+		<a href="#" class="scrollup"></a>
 		
+		<div id="Main-Container">
 
-		$(window).scroll(function()
-		{
-			if($(this).scrollTop()>400) $('.scrollup').fadeIn();
-			else $('.scrollup').fadeOut();		
-		}
-		);
-	
-	
-	</script>
-	
-        
-        
-    </head>
-    <body>
-        
-        <a href="#" class="scrollup"></a>
-   
-        <div class="nav">
-			<ol>
-				<li><a href="index.php">Strona główna</a></li>
-				<li><a href="#">Kategorie</a>
-					<ul>
+				<div class="nav">
 
-						<?php
-						foreach($categories as $category)
-						{
-							echo '<li><a href="search-article-action.php?search-type=category&search-string='.$category['CategoryID'].'">'.$category['Name'].'</a></li>';
-						}
+					<ol>
+						<li><a href="index.php">Strona główna</a></li>
 
-						?>
+						<li><a href="#">Kategorie</a>
+							<ul>
+								<?php
+								foreach($categories as $category)
+								{
+									echo '<li><a href="search-article-action.php?search-type=category&search-string='.$category['CategoryID'].'">'.$category['Name'].'</a></li>';
+								}
+								?>
+							</ul>
+						</li>
+
+						<li><a href="article-search.php">Szukaj</a></li>
 						
-					</ul>
-				</li>
-				<li><a href="article-search.php">Szukaj</a>
+						<li><a href="<?php echo $file?>"> <?php echo $mention?> </a></li>
+					</ol>
 				
-				</li>
-				<li><a href="#">Dodaj artykuł</a>
-				
-				</li>
-				<li><a href="#">O autorach</a>
-					<ul>
-						<li><a href="#">Snopek Jan</a></li>
-						<li><a href="#">Sladkowski Konrad</a></li>
-						<li><a href="#">Zuber Piotr</a></li>
-					</ul>
-				</li>
-                <li><a href="#">Kontakt</a>
-				
-				</li>
-				<li><a href="<?php echo $file?>"> <?php echo $mention?> </a></li>
-			</ol>
+				</div>
+
+
+			<!-- Pętla wyświetlająca artykuły -->
+			<?php	foreach($articles as $article) { ?>
+
+			<Article>
+			
+				<div id="Wpis">
+
+					<div id="Article">
+						<a href="Read_Article.php?id=<?php echo $article['ArticleID'];?>"> 
+							<h1> 
+								<?php echo $article['Title']; ?> 
+								<?php	if(!empty($article['Image']))echo '<img height="100" width="100" src="data:image/jpeg;base64,'.base64_encode( $article['Image'] ).'"/>'; ?>
+							</h1>
+						</a>
+
+						<div id="image-div">
+						</div>
+
+						<h6>
+							<?php echo $article['Introduction']; ?> 
+						<h6>
+
+					</div>
+
+				</div> <!-- Wpis end -->
+
+			</Article>
+
+			<?php } ?> 
+			<!-- Koniec Foreach -->
 		
 		</div>
-        
-        <h1> STRONA TESTOWA PROJEKT</h1>
-      <!-- Pętla wyświetlająca artykuły -->
-	  <?php	foreach($articles as $article) { ?>
-		<br/> <br/><br/><br/>
-	<article>
-		<a href="Read_Article.php?id=<?php echo $article['ArticleID'];?>"> 
-			<h1> 
-				<font size="10" color="black"> 
-					<?php echo $article['Title']; ?> 
-				<?php	if(!empty($article['Image']))echo '<img height="100" width="100" src="data:image/jpeg;base64,'.base64_encode( $article['Image'] ).'"/>'; ?>
-				</font>  
-		  </h1>
-		</a>
-		<font size = "4" color = "grey"> 
-			<?php echo $article['Introduction']; ?> 
-		</font>
-	</article>
-		<br/> <br/>
-	  
-	  <?php } ?> 
-	  <!-- Koniec Foreach -->
 
-		<a href="screenshots/htmlcheatsheet.jpg" target="_blank">
+		<div id="FOOTER">
+
+			<h2>&copy; 2018 Politechnika Śląska wydział Elektryczny Informatyka Sekcja 5 Sem V
+				<p>Strona ta powstała na potrzeby projektu z przedmiotu "Serwisy Internetowe" jej autorami są Snopek Jan, Sladkowski Konrad, Zuber Piotr</P>
+			</h2>
+
+		</div>
+
+	</BODY>
+
+</HTML>
+
+
+
+
+	<!--		<a href="screenshots/htmlcheatsheet.jpg" target="_blank">
 			<img alt="Zrzut ekranu pokazujący szybką edycję CSS" src="screenshots/htmlcheatsheet.jpg" />
 		</a>
+	-->
+
 		
-		
-    </body>
-</html>

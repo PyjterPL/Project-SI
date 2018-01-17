@@ -1,24 +1,72 @@
 html {
    
-    background-image: linear-gradient(180deg, rgb(223, 223, 223) 0%, rgb(150, 150, 150) 100%);
-    -webkit-font-smoothing: antialiased;
+   
 }
 
 body {
-    background: #f7f7f7;
+	background: #cfcfcf;
+	background-image: url("../screenshots/logintlo.jpg");
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
     color: #545454;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
-    line-height: 1.5;
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 0em 0em 4em;
+	line-height: 1.5;
+	width: 100%;
+	margin: 0 auto;
+	box-sizing: border-box;
+    padding: 0px;
+}
+
+#Main-Container
+{
+	width: 100%;
+	margin: 0px auto;
 }
 
 h1
 {
-    padding-left: 20px;
+	color: black;
+	padding-left: 20px;
+	font-size: 32px;
+}
+
+h6
+{
+	font-size: 18px;
+	padding-left: 15px;
+}
+
+
+#Article
+{
+	margin: 0;
+	background-color: rgb(247, 247, 247);
+	width: auto;
+	border: 2px solid dodgerblue;
+	border-radius: 25px;
+}
+
+#image-div
+{
+	
+	margin: 0;
+	padding: 0px;
+	background-color: red;
+	width: 60%;
+	height: 400px;
+	margin-left: 20px;
+}
+
+#Wpis
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	background-color:  #f0f0f0;
+	border-radius: 20px;
+	width: 80%;
+	padding: 5px;
+
 }
 
 img {
@@ -33,12 +81,20 @@ img {
 
 .nav
 { 
+	margin-left: auto;
+	margin-right: auto;
 	width: 100%;
-	padding: 10px 0;
-	background-color: #234a60;
+	font-size: 25px;
+	font-weight: bold;
+	padding: 5px;
+	background-color: dodgerblue;
 	text-align: center;
-	border-top: 1px solid #234a60;
-	border-bottom: 1px solid #234a60;
+	border-bottom:  4px solid rgb(14, 135, 255);
+	padding: 10px;
+	margin-bottom: 50px;
+	-webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,1);
+	box-shadow: 0px 0px 15px 1px rgba(0,0,0,1);
     
 }
 
@@ -48,8 +104,9 @@ ol
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
-	font-size: 18px;
+	font-size: 20px;
 	height: 35px;
+	width: 60%;
 	line-height: 200%;
 	display: inline-block;
 }
@@ -64,19 +121,20 @@ ol a
 ol > li
 {
 	float: left;
-	width: 140px;
+	width: 25%;
 	height: 40px;
-	border-right: 2px dashed #000000;
+	/*border-right: 2px dashed white;*/
 }
 
 ol > li:first-child
 {
-	border-left: 2px dashed #000000;
+	/*border-left: 2px dashed white;*/
 }
 
 ol > li:hover
 {
-	background-color: #88bbd8;
+	background-color: royalblue;
+	
 }
 
 ol > li:hover > a
@@ -96,19 +154,20 @@ ol > li > ul
 ol > li:hover > ul
 {
 	display: block;
+	background-color: royalblue;
 }
 
 ol > li > ul > li
 {
-	background-color:#234a60;
+	background-color: dodgerblue;
 	position: relative;
 	z-index: 100;
-	border-top: 2px dashed #000000;
+	border-top: 2px dashed white;
 }
 
 ol > li > ul > li:hover
 {
-	background-color: #88bbd8;
+	background-color: royalblue;
 }
 
 ol > li > ul > li:hover > a
@@ -162,4 +221,20 @@ a:active
 {
 	color: #fff;
 	text-decoration: none;
+}
+
+#FOOTER
+{
+	margin-top: 50px;
+	padding: 5px;
+	color: white;
+	background-color: dodgerblue;
+
+	
+}
+
+h2
+{
+	font-size: 18px;
+	text-align: center;
 }
