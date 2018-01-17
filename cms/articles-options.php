@@ -33,7 +33,7 @@ if(isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['Perm
                         <div id="art-wpis">
                             <div id="art-placement">
                             <b> <?php echo $article['Title'];?> </b>
-                </div>
+                    </div>
                             
                         
                             <small> Dodano <?php echo date("Y-m-d H:i:s",strtotime($article['InsertDate'])); ?> </small>

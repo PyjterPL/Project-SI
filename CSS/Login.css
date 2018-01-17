@@ -405,3 +405,11 @@ textarea:focus-within
 }
 
 
+#add-user-inputs
+{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+

@@ -16,13 +16,18 @@ if( isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  ($_SESSION['Pe
     <html>
     <head>
         <title>Dodawanie użytkownika</title>
-        <link rel="stylesheet" href="admin-panel-style.css" /> 
+        <link rel="stylesheet" href="../CSS/Login.css" /> 
     </head>
+
+
+
          <body>
-            <div class="container">
-            <a href="articles-options.php">Powrót</a>
-            </br>
-            <h4>Dodawanie użytkownika</h4>
+
+         <div id="add_article">
+
+
+        
+            <label>Dodawanie użytkownika</label>
                 <?php
                 if(isset($_GET['error']))
                 {
@@ -31,20 +36,27 @@ if( isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  ($_SESSION['Pe
                 ?>
 
                 <form action="add-user-action.php" method="post" enctype="multipart/form-data">
-                Login<input type="text" name="name" placeholder="Login" value=""/></br></br>
-                Hasło<textarea rows="5" cols="20" placeholder="Hasło" name="password"></textarea></br></br>
-               Email<textarea rows="15" cols="20" placeholder="mail" name="mail"></textarea></br></br>
-               Opis <input type="text" name="description" placeholder="Opis" value=""/></br></br>
-               Obrazek  <input type="file" name="obrazek" accept="image/jpeg,image/gif,image/jpg" /></br></br>
 
-               Uprawnienia <input list="permissions" name = "permission">
-                    <datalist id="permissions">                                          
+                    <div id="add-user-inputs">
+
+                        <input type="text" name="name" placeholder="Login" value=""/>
+                        <input type="password" placeholder="Hasło" name="password"></textarea>
+                        <input type="text" placeholder="Email" name="mail"></textarea>
+                        <input type="text" name="description" placeholder="Opis" value=""/>
+                        <input type="file" name="obrazek" accept="image/jpeg,image/gif,image/jpg" />
+                        <input list="permissions" placeholder="Kliknij aby wybrać uprawninia" name = "permission">
+
+
+                        <datalist id="permissions">                                          
                         <?php foreach($permissions as $permission) { ?> 
-                            <option value="<?php echo $permission['PermissionID'].'.'.$permission['Description']; ?>">  
-                            <?php } ?>                     
-                    </datalist> 
-                    
-                <input type="submit" value="Dodaj" />
+                        <option value="<?php echo $permission['PermissionID'].'.'.$permission['Description']; ?>">  
+                        <?php } ?>                     
+                        </datalist> 
+
+                        <input type="submit" value="Dodaj" />
+                        <input type="button" value="Powrót" onclick="window.location.href='user-options.php'" /> 
+
+                    </div>
                 </form>
             </div>
         </body>
