@@ -5,7 +5,7 @@ session_start();
 $article = new Article;
 if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==true) &&  $_SESSION['PermissionID']<3)
 {
-    if(isset($_POST['title']) && isset($_POST['introduction']) && isset($_POST['content']) && isset($_POST['tags']))
+    if(isset($_POST['title']) && isset($_POST['introduction']) && isset($_POST['content']) && isset($_POST['tags']) && isset($_POST['category']))
     {
     $title = $_POST['title'];
     $introduction = $_POST['introduction'];
@@ -14,7 +14,7 @@ if(isset($_GET['id']) && isset($_SESSION['logged']) && ($_SESSION['logged']==tru
     $userID= $_SESSION['UserID'];
     $categoryID=(int)$_POST['category'];
     $id = $_GET['id'];
-        if(empty($title) or empty($introduction) or empty($content) or empty($tags))
+        if(empty($title) or empty($introduction) or empty($content) or empty($tags) or empty($categoryID))
         {
             $error="Uzupełnij wymagane pola";
             header("Location: article-edit.php?error=$error&id=$id");
