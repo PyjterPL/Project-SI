@@ -31,6 +31,15 @@ h6
 	padding-left: 15px;
 }
 
+#Wpis-search
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	border-radius: 20px;
+	width: 80%;
+	padding: 5px;
+}
 
 #Article
 {
@@ -38,6 +47,16 @@ h6
 	background-color: rgb(247, 247, 247);
 	width: auto;
 	border: 2px solid dodgerblue;
+	border-radius: 25px;
+}
+
+#Article-search
+{
+	margin: 30px;
+	padding: 30px;
+	background-color: rgb(247, 247, 247);
+	width: auto;
+	border: 2px dashed dodgerblue;
 	border-radius: 25px;
 }
 
