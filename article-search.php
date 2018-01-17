@@ -35,6 +35,7 @@ $category= new Category;
                     
                     </div>
                     <input type="submit" value="Szukaj" />
+                    <input type="button" value="Powrót" onclick="window.location.href='index.php'" />
                     
                 </form>
             </div>
