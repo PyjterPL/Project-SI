@@ -4,6 +4,7 @@ session_start();
 if(!(isset($_SESSION['logged'])) || !($_SESSION['logged']==true))
 {
    header("Location: ../index.php");
+   exit();
 }
     
     $query=$pdo->prepare('UPDATE users SET Description=? where Name=? ');

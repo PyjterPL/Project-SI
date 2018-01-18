@@ -4,6 +4,7 @@ session_start();
 if(!(isset($_SESSION['logged'])) || !($_SESSION['logged']==true))
 {
    header("Location: ../index.php");
+   exit();
 }
 if(is_uploaded_file($_FILES['eAvatar']['tmp_name']))
 {
@@ -25,6 +26,7 @@ if(is_uploaded_file($_FILES['eAvatar']['tmp_name']))
             $query->execute();
             $_SESSION['Avatar'] = $file;
             header("Location: user_edition.php?komm=Avatar Został Zmieniony");
+            exit();
            
          }    
 }

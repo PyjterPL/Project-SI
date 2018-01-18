@@ -5,6 +5,7 @@ session_start();
 if(!(isset($_SESSION['logged'])) || !($_SESSION['logged']==true))
 {
    header("Location: ../index.php");
+   exit();
 }
 
 if(!(isset($_POST['ePass'])) || !(isset($_POST['ePassP']))  || empty($_POST['ePass']) ||empty($_POST['ePassP']) )
@@ -22,11 +23,13 @@ if(strlen($haslo) <8 || strlen($haslo) > 25)
     
     $_SESSION['err_haslo']="Hasło musi być dłuższe niż 8 znaków i krótsze niż 25 znaków";
     header("Location: user_edition.php");
+    exit();
 }
 if($haslo != $haslo2)
 {
     $_SESSION['err_haslo']="Podane hasłą muszą być identyczne";
     header("Location: user_edition.php");
+    exit();
     
 }
 // Haszowanie hasła obecnie szyfruje się: bCrypt  user:test hasło:123qwerty
